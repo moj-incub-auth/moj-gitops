@@ -5,7 +5,7 @@ commonLabels:
 resources:
   - ./1-hap-model-container.yaml
   - ./2-hap.yaml
-  - ./3-configmap_vllm_gateway
+  - ./3-configmap_vllm_gateway.yaml
 
 
 
