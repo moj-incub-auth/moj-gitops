@@ -4,6 +4,7 @@ commonLabels:
   app: moj
 resources:
   - ./1-hap-model-container.yaml
+  - ./2-hap.yaml
 
 
 
