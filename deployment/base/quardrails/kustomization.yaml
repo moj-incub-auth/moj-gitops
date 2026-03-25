@@ -6,6 +6,10 @@ resources:
   - ./1-hap-model-container.yaml
   - ./2-hap.yaml
   - ./3-configmap_vllm_gateway.yaml
+  - ./4-configmap_auxiliary_images.yaml
+  - ./5-configmap_orchestrator.yaml
+  
+
 
 
 
