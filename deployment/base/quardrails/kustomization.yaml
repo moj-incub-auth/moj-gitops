@@ -8,7 +8,9 @@ resources:
   - ./3-configmap_vllm_gateway.yaml
   - ./4-configmap_auxiliary_images.yaml
   - ./5-configmap_orchestrator.yaml
-  
+  - ./6-gateway_route.yaml
+  - ./7-orchestrator_cr.yaml
+
 
 
 

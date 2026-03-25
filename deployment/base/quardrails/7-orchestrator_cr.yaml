@@ -1,0 +1,15 @@
+apiVersion: trustyai.opendatahub.io/v1alpha1
+kind: GuardrailsOrchestrator
+metadata:
+  name: guardrails-orchestrator
+spec:
+  orchestratorConfig: "orchestrator-config"
+  enableGuardrailsGateway: true
+  guardrailsGatewayConfig: "fms-orchestr8-config-gateway"
+  enableBuiltInDetectors: true
+  replicas: 1
+tolerations:
+  - key: "nvidia.com/gpu"
+    operator: "Equal"
+    value: "NVIDIA-L40-PRIVATE"
+    effect: "NoSchedule"  
