@@ -2,9 +2,9 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: incub-deploy
-  namespace: incub-deploy
+  namespace: openshift-gitops
 spec:
-  project: moj-incub-deploy
+  project: default
   source:
     repoURL: https://github.com/moj-incub-auth/moj-gitops.git
     targetRevision: main
