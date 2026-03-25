@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 commonLabels:
-  app: rps
+  app: moj
 resources:
   - ./1-hap-model-container.yaml
   - ./deployment.yaml
