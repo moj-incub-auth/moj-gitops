@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tasks
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: hhttps://github.com/moj-incub-auth/moj-vector-data.git
+    targetRevision: main
+    path: 'deploy/openshift/tasks'
+  destination:
+    name: in-cluster
+  #server: https://kubernetes.default.svc
+    namespace: 'moj-builder'
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
