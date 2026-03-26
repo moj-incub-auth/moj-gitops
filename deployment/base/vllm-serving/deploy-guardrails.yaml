@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guardrails
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/moj-incub-auth/moj-gitops.git
+    targetRevision: main
+    path: 'base/manifests/guardrails'
+  destination:
+    name: in-cluster
+    namespace: 'vllm-serving-test'
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+ 
