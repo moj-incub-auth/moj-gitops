@@ -3,5 +3,5 @@ kind: Kustomization
 commonLabels:
   app: moj
 bases:
-- ./quardrails
+#- ./quardrails
 - ./moj-vector-data
