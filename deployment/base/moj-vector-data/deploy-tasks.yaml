@@ -11,7 +11,6 @@ spec:
     path: 'deploy/openshift/tasks'
   destination:
     name: in-cluster
-    server: https://kubernetes.default.svc
     namespace: 'moj-builder'
   syncPolicy:
     automated: 
