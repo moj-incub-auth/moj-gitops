@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: hhttps://github.com/moj-incub-auth/moj-vector-data.git
+    repoURL: https://github.com/moj-incub-auth/moj-vector-data.git
     targetRevision: main
     path: 'deploy/openshift/tasks'
   destination:
