@@ -3,9 +3,11 @@ kind: Kustomization
 commonLabels:
   app: moj
 resources:
+  - ./deploy-search-app.yaml
   - ./deploy-tasks.yaml
-  - ./deploy-pipelines.yaml
-  - ./deploy-webhooks.yaml
+  - ./deploy-vibe-ui.yaml
+  #- ./deploy-pipelines.yaml
+  #- ./deploy-webhooks.yaml
 
 
 
