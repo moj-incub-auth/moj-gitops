@@ -12,7 +12,7 @@ spec:
   destination:
     name: in-cluster
   #server: https://kubernetes.default.svc
-    namespace: 'moj-builder'
+    namespace: 'moj-builder-test'
   syncPolicy:
     automated: 
       prune: true
