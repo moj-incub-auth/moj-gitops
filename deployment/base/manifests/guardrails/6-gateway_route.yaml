@@ -24,8 +24,5 @@ spec:
     name: guardrails-gateway
   tls:
     termination: edge
-    insecureEdgeTerminationPolicy: ''
-    destinationCACertificate: ''
   port:
     targetPort: 8090
-  alternateBackends: []

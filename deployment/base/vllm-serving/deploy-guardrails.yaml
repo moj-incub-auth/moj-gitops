@@ -8,10 +8,10 @@ spec:
   source:
     repoURL: https://github.com/moj-incub-auth/moj-gitops.git
     targetRevision: main
-    path: 'base/manifests/guardrails'
+    path: 'deployment/base/manifests/guardrails'
   destination:
     name: in-cluster
-    namespace: 'vllm-serving-test'
+    namespace: 'vllm-serving'
   syncPolicy:
     automated: 
       prune: true

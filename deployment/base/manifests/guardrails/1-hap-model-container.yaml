@@ -28,7 +28,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guardrails-container-deployment-hap # <--- change this
-labels:
+  labels:
     app: minio-guardrails-hap # <--- change this to match label on the pod
 spec:
   replicas: 1
@@ -60,8 +60,6 @@ spec:
       initContainers:
         - name: download-model
           image: quay.io/rgeada/llm_downloader:latest
-          securityContext:
-            fsGroup: 1001
           command:
             - bash
             - -c
