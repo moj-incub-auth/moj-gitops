@@ -6,6 +6,7 @@ resources:
   - ./deploy-tasks.yaml
   - ./deploy-pipelines.yaml
   - ./deploy-webhooks.yaml
+  - ./deploy-task-ai.yaml
 
 
 
