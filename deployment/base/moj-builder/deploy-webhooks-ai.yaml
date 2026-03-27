@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: webhooks-ai
+  namespace: openshift-gitops
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/moj-incub-auth/moj-vector-data-v2.git
+    targetRevision: main
+    path: 'deploy/openshift/webhooks'
+  destination:
+    name: in-cluster
+    namespace: 'moj-builder'
+  syncPolicy:
+    automated: 
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
