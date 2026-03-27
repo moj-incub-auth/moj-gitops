@@ -6,7 +6,7 @@ data:
   config.yaml: |
     chat_generation:
       service:
-        hostname: qwen3-14b-llm-metrics.incub-deploy.svc.cluster.local
+        hostname: qwen3-14b-llm-metrics.vllm-serving.svc.cluster.local
         port: 8080
     detectors:
       regex_competitor:    #built_in:
@@ -19,7 +19,7 @@ data:
       hap:
         type: text_contents
         service:
-          hostname: guardrails-detector-ibm-hap-predictor.incub-deploy.svc.cluster.local
+          hostname: guardrails-detector-ibm-hap-predictor.vllm-serving.svc.cluster.local
           port: 80
         chunker_id: whole_doc_chunker
         default_threshold: 0.5

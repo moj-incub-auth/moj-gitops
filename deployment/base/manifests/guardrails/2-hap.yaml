@@ -18,6 +18,11 @@ spec:
   containers:
     - name: kserve-container
       image: quay.io/rgeada/guardrails-detector-huggingface
+      resources:
+        limits:
+          nvidia.com/gpu: 1 # Requests the GPU
+        requests:
+          nvidia.com/gpu: 1      
       command:
         - uvicorn
         - app:app
@@ -55,9 +60,35 @@ spec:
   predictor:
     maxReplicas: 1
     minReplicas: 1
+    affinity:
+      nodeAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+        - weight: 90
+          preference:
+            matchExpressions:
+            - key: nvidia.com/gpu.present
+              operator: In
+              values:
+              - 'true'
+    tolerations:
+      - effect: NoSchedule
+        key: nvidia-gpu-only
+        operator: Exists
+      - effect: NoSchedule
+        key: nvidia.com/gpu
+        operator: Exists
     model:
       modelFormat:
         name: guardrails-detector-huggingface
+      resources:
+        limits:
+          cpu: '2'
+          memory: 4Gi
+          nvidia.com/gpu: '1'  # Crucial: This triggers the GPU allocation
+        requests:
+          cpu: '2'
+          memory: 4Gi
+          nvidia.com/gpu: '1'
       name: ''
       runtime: guardrails-detector-runtime-hap
       storage:

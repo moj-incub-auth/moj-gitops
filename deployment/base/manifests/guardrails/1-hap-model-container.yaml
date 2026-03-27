@@ -42,6 +42,17 @@ spec:
         maistra.io/expose-route: 'true'
       name: minio-guardrails-hap
     spec:
+      affinity:
+        nodeAffinity:
+          # This is the "Preference" (Soft Rule)
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            preference:
+              matchExpressions:
+              - key: "nvidia.com/gpu.present"
+                operator: In
+                values:
+                - "true"    
       volumes:
       - name: model-volume
         persistentVolumeClaim:
@@ -87,6 +98,13 @@ spec:
           volumeMounts:
             - mountPath: "/models/"
               name: model-volume
+      tolerations:
+        - key: nvidia-gpu-only
+          operator: Exists
+          effect: NoSchedule
+        - key: nvidia.com/gpu
+          operator: Exists
+          effect: NoSchedule                  
 ---
 apiVersion: v1
 kind: Secret
