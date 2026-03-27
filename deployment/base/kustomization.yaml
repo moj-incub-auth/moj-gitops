@@ -5,3 +5,4 @@ commonLabels:
 bases:
 #- ./quardrails
 - ./moj-vector-data
+- ./moj-builder
