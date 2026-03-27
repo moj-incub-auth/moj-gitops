@@ -3,6 +3,7 @@ kind: Kustomization
 commonLabels:
   app: moj
 resources:
+  - ./deploy-ingest-ai-image.yaml
   - ./deploy-search-app.yaml
   - ./deploy-vibe-ui.yaml
 
