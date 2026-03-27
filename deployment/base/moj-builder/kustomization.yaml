@@ -7,7 +7,7 @@ resources:
   - ./deploy-pipelines.yaml
   - ./deploy-webhooks.yaml
   - ./deploy-task-ai.yaml
-
+  - ./deploy-pipelines-ingest-ai.yaml
 
 
 
